@@ -143,7 +143,7 @@ export const Home = (): JSX.Element => {
         <></>
       )}
 
-      {widgets.some((w) => w.isPinned) ? (
+      {isAuthenticated || widgets.some((w) => w.isPinned) ? (
         <Fragment>
           <SectionHeadline title="Services" link="/services" />
           {widgetsLoading ? (
