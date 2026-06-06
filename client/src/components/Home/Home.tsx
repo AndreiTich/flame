@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../store';
 
 // Typescript
-import { App, Category } from '../../interfaces';
+import { App, Category, ServiceWidget } from '../../interfaces';
 
 // UI
 import { Icon, Container, SectionHeadline, Spinner, Message } from '../UI';
@@ -19,6 +19,7 @@ import classes from './Home.module.css';
 // Components
 import { AppGrid } from '../Apps/AppGrid/AppGrid';
 import { BookmarkGrid } from '../Bookmarks/BookmarkGrid/BookmarkGrid';
+import { ServiceWidgetGrid } from '../ServiceWidgets/ServiceWidgetGrid/ServiceWidgetGrid';
 import { SearchBar } from '../SearchBar/SearchBar';
 import { Header } from './Header/Header';
 
@@ -29,12 +30,13 @@ export const Home = (): JSX.Element => {
   const {
     apps: { apps, loading: appsLoading },
     bookmarks: { categories, loading: bookmarksLoading },
+    serviceWidgets: { widgets, loading: widgetsLoading },
     config: { config },
     auth: { isAuthenticated },
   } = useSelector((state: State) => state);
 
   const dispatch = useDispatch();
-  const { getApps, getCategories } = bindActionCreators(
+  const { getApps, getCategories, getServiceWidgets } = bindActionCreators(
     actionCreators,
     dispatch
   );
@@ -58,6 +60,11 @@ export const Home = (): JSX.Element => {
     if (!categories.length) {
       getCategories();
     }
+  }, []);
+
+  // Load service widgets
+  useEffect(() => {
+    getServiceWidgets();
   }, []);
 
   useEffect(() => {
@@ -128,6 +135,23 @@ export const Home = (): JSX.Element => {
               }
               totalApps={apps.length}
               searching={!!localSearch}
+            />
+          )}
+          <div className={classes.HomeSpace}></div>
+        </Fragment>
+      ) : (
+        <></>
+      )}
+
+      {widgets.some((w) => w.isPinned) ? (
+        <Fragment>
+          <SectionHeadline title="Services" link="/services" />
+          {widgetsLoading ? (
+            <Spinner />
+          ) : (
+            <ServiceWidgetGrid
+              widgets={widgets.filter(({ isPinned }) => isPinned)}
+              totalWidgets={widgets.length}
             />
           )}
           <div className={classes.HomeSpace}></div>

@@ -17,6 +17,7 @@ import { Home } from './components/Home/Home';
 import { Apps } from './components/Apps/Apps';
 import { Settings } from './components/Settings/Settings';
 import { Bookmarks } from './components/Bookmarks/Bookmarks';
+import { ServiceWidgets } from './components/ServiceWidgets/ServiceWidgets';
 import { NotificationCenter } from './components/NotificationCenter/NotificationCenter';
 
 // Get config
@@ -83,6 +84,7 @@ export const App = (): JSX.Element => {
           <Route path="/settings" component={Settings} />
           <Route path="/applications" component={Apps} />
           <Route path="/bookmarks" component={Bookmarks} />
+          <Route path="/services" component={ServiceWidgets} />
         </Switch>
       </BrowserRouter>
       <NotificationCenter />

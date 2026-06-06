@@ -23,6 +23,7 @@ api.use('/api/bookmarks', require('./routes/bookmark'));
 api.use('/api/queries', require('./routes/queries'));
 api.use('/api/auth', require('./routes/auth'));
 api.use('/api/themes', require('./routes/themes'));
+api.use('/api/service-widgets', require('./routes/serviceWidgets'));
 
 // Custom error handler
 api.use(errorHandler);

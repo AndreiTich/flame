@@ -1,4 +1,5 @@
 export * from './Tables/Table/Table';
+export * from './Tables/EntityTable/EntityTable';
 export * from './Tables/CompactTable/CompactTable';
 export * from './Spinner/Spinner';
 export * from './Notification/Notification';

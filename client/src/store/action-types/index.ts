@@ -47,6 +47,16 @@ export enum ActionType {
   setEditBookmark = 'SET_EDIT_BOOKMARK',
   reorderBookmarks = 'REORDER_BOOKMARKS',
   sortBookmarks = 'SORT_BOOKMARKS',
+  // SERVICE WIDGETS
+  getServiceWidgets = 'GET_SERVICE_WIDGETS',
+  getServiceWidgetsSuccess = 'GET_SERVICE_WIDGETS_SUCCESS',
+  addServiceWidget = 'ADD_SERVICE_WIDGET',
+  addServiceWidgetSuccess = 'ADD_SERVICE_WIDGET_SUCCESS',
+  deleteServiceWidget = 'DELETE_SERVICE_WIDGET',
+  updateServiceWidget = 'UPDATE_SERVICE_WIDGET',
+  pinServiceWidget = 'PIN_SERVICE_WIDGET',
+  reorderServiceWidgets = 'REORDER_SERVICE_WIDGETS',
+  setEditServiceWidget = 'SET_EDIT_SERVICE_WIDGET',
   // AUTH
   login = 'LOGIN',
   logout = 'LOGOUT',

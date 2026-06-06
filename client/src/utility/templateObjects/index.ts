@@ -3,3 +3,4 @@ export * from './settingsTemplate';
 export * from './appTemplate';
 export * from './categoryTemplate';
 export * from './bookmarkTemplate';
+export * from './serviceWidgetTemplate';

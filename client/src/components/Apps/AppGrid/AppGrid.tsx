@@ -1,4 +1,4 @@
-import classes from './AppGrid.module.css';
+import classes from '../../UI/Grids/Grid.module.css';
 import { Link } from 'react-router-dom';
 import { App } from '../../../interfaces/App';
 
@@ -19,7 +19,7 @@ export const AppGrid = (props: Props): JSX.Element => {
       apps = <Message>No apps match your search criteria</Message>;
     } else {
       apps = (
-        <div className={classes.AppGrid}>
+        <div className={classes.Grid}>
           {props.apps.map((app: App): JSX.Element => {
             return <AppCard key={app.id} app={app} />;
           })}

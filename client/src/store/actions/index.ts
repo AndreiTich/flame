@@ -58,6 +58,16 @@ import {
   LogoutAction,
 } from './auth';
 
+import {
+  GetServiceWidgetsAction,
+  AddServiceWidgetAction,
+  DeleteServiceWidgetAction,
+  UpdateServiceWidgetAction,
+  PinServiceWidgetAction,
+  ReorderServiceWidgetsAction,
+  SetEditServiceWidgetAction,
+} from './serviceWidget';
+
 export type Action =
   // Theme
   | SetThemeAction
@@ -105,4 +115,12 @@ export type Action =
   | LoginAction
   | LogoutAction
   | AutoLoginAction
-  | AuthErrorAction;
+  | AuthErrorAction
+  // Service Widgets
+  | GetServiceWidgetsAction<undefined | any[]>
+  | AddServiceWidgetAction
+  | DeleteServiceWidgetAction
+  | UpdateServiceWidgetAction
+  | PinServiceWidgetAction
+  | ReorderServiceWidgetsAction
+  | SetEditServiceWidgetAction;
